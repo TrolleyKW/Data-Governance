@@ -147,7 +147,14 @@ input[type=range]{width:100%;accent-color:var(--orange);height:34px}
 .cmp td:first-child{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);width:18%}
 .cmp .colA,.cmp .colB{width:41%;transition:opacity .3s}
 .cmp.viewB .colA{opacity:.38} .cmp.viewA .colB{opacity:.38}
-.cmp th.colB{background:var(--green)}
+.cmp th.colB{background:var(--navy-2)}
+.cmp th.colC{background:var(--green)}
+.cmp td:first-child{width:13%}
+.cmp .colA,.cmp .colB,.cmp .colC{width:29%;transition:opacity .3s}
+.cmp.viewA .colB,.cmp.viewA .colC{opacity:.38}
+.cmp.viewB .colA,.cmp.viewB .colC{opacity:.38}
+.cmp.viewC .colA,.cmp.viewC .colB{opacity:.38}
+
 .reco{margin-top:16px;background:var(--green);color:#fff;border-radius:12px;padding:14px 22px;font-family:var(--disp);font-weight:600;font-size:16px;text-align:center}
 
 /* team */
@@ -182,7 +189,10 @@ img.avatar{width:64px;height:64px;object-fit:cover;border:3px solid var(--orange
 .bar{height:30px;border-radius:8px;position:relative;overflow:hidden;background:#EDF1F5}
 .bar i{position:absolute;inset:0 auto 0 0;border-radius:8px}
 .bar.hy i{width:32%;background:var(--green)}
+/* .bar.vn i{width:92%;background:var(--red)}*/ 
 .bar.vn i{width:92%;background:var(--red)}
+.bar.mx i{width:65%;background:#E0A400}
+
 
 /* deliverables */
 .deliv{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
@@ -400,7 +410,10 @@ img.avatar{width:64px;height:64px;object-fit:cover;border:3px solid var(--orange
   <div class="banner">Supported by: <em>Policies · Standards · Processes · Tools · People · Culture</em></div>
 </section>
 
+
+
 <!-- 7 · APPROACH -->
+<!--
 <section class="slide" data-title="Two Approaches, One Smart Choice">
   <div class="eyebrow">03 · Approach</div>
   <h2>Two approaches. One smart choice.</h2>
@@ -417,6 +430,28 @@ img.avatar{width:64px;height:64px;object-fit:cover;border:3px solid var(--orange
   <div class="reco">Recommended: Hybrid model — build internal capability, use expert advisory selectively.</div>
   <div class="banner" style="margin-top:14px">Vendor leaves → knowledge leaves. Internal team → <em>knowledge stays forever.</em></div>
 </section>
+-->
+
+<!-- 7 · APPROACH -->
+<section class="slide" data-title="Three Approaches, One Smart Choice">
+  <div class="eyebrow">03 · Approach</div>
+  <h2>Three possible approaches. One recommended model.</h2>
+  <div class="appr-toggle"><button id="btnA">Option A · Vendor-led</button><button id="btnB">Option B · Fully internal</button><button id="btnC" class="on">Option C · Vendor assessment + internal implementation</button></div>
+  <table class="cmp viewC" id="cmpTable">
+    <tr><th></th><th class="colA">Option A — Full vendor-led implementation</th><th class="colB">Option B — Fully internal implementation</th><th class="colC">Option C — Vendor assessment + internal implementation</th></tr>
+    <tr><td>Model</td><td class="colA">Vendor performs assessment, design, implementation, documentation and handover</td><td class="colB">Data Science team does everything internally after training</td><td class="colC">Vendor delivers assessment, gap analysis &amp; roadmap — Data Science team implements after training &amp; certification</td></tr>
+    <tr><td>Cost</td><td class="colA">High — Consumes the full budget in external fees</td><td class="colB">Lower total cost of ownership within the same envelope</td><td class="colC">vendor fees limited to assessment — && Training Cost & Certificates &amp; roadmap validation</td></tr>
+    <tr><td>Dependency</td><td class="colA">High, long-term vendor reliance</td><td class="colB">Low — advisory only where we need it</td><td class="colC">Low — expert input only at the start</td></tr>
+    <tr><td>Knowledge</td><td class="colA">May leave with the vendor after handover</td><td class="colB">Stays and compounds within Trolley</td><td class="colC">Externally validated — and stays inside Trolley (Half/Half)</td></tr>
+    <tr><td>Capability</td><td class="colA">Limited internal capability building</td><td class="colB">A certified in-house governance team of four</td><td class="colC">Mixed between Trolley Team & Vendor</td></tr>
+    <tr><td>Risk</td><td class="colA">Vendor lock-in, limited internal capability</td><td class="colB">Self-sufficient and future-ready</td><td class="colC">Reduced — validated direction, internal execution</td></tr>
+  </table>
+  <!-- <div class="reco">Recommended: Option B — build internal capability, use expert advisory selectively.</div> --> 
+   <div class="reco">Before I share my own recommendation — from your side, which of the three models feels right for Trolley, and what's driving your choice?</div>
+  <div class="banner" style="margin-top:14px">Vendor leaves → knowledge leaves. Internal team → <em>knowledge stays forever.</em></div>
+</section>
+
+<!--<div class="banner" style="margin-top:14px">We are not asking a vendor to build governance for us — <em>we ask them to validate the direction. Our team builds the capability.</em></div>-->
 
 <!-- 8 · MATURITY -->
 <section class="slide" data-title="Maturity Journey (Interactive)">
@@ -506,7 +541,11 @@ img.avatar{width:64px;height:64px;object-fit:cover;border:3px solid var(--orange
       <div class="card" style="border-top:5px solid var(--green)">
         <div class="klabel">Program budget ceiling — 12 months</div>
         <div class="big g" style="font-size:clamp(20px,2.3vw,32px);line-height:1.15">Capped at the highest<br>vendor quotation received</div>
+        
         <p style="margin-top:10px">Benchmarked against <b>real quotations received from vendors and suppliers</b> for equivalent scope — the hybrid model delivers within this ceiling. A maximum envelope, not a target to spend.</p>
+        
+        <!--<p style="margin-top:10px">Benchmarked against <b>real quotations received from vendors and suppliers</b> for equivalent scope. Vendor spend is limited to assessment, maturity review, gap analysis, roadmap validation and selected advisory — implementation cost is optimized by using Trolley's internal Data Science capability after training and certification.</p>-->
+
         <p style="margin-top:8px"><span class="tag green">No new platform procurement</span> — builds on Microsoft Fabric &amp; Purview we already operate.</p>
       </div>
       <div class="card" style="margin-top:12px">
@@ -516,11 +555,22 @@ img.avatar{width:64px;height:64px;object-fit:cover;border:3px solid var(--orange
     </div>
     <div>
       <h4 style="font-family:var(--disp);color:var(--navy);margin-bottom:4px">Same envelope — a very different destination</h4>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px">All three options fit within the ceiling. Only two build internal capability — and only one is validated.</p>
+
+      <!-- 
       <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Both options fit the budget. Only one leaves Trolley stronger after month 12.</p>
+      
       <div class="bar-wrap">
         <div class="bar-row"><div class="blabel">Full vendor-led (highest received quote) <span>External fees · knowledge leaves at handover</span></div><div class="bar vn"><i></i></div></div>
         <div class="bar-row"><div class="blabel">Hybrid — recommended <span>Training, certification &amp; selective advisory · knowledge stays</span></div><div class="bar hy" style="--w:78%"><i style="width:78%"></i></div></div>
       </div>
+    --> 
+      <div class="bar-wrap">
+        <div class="bar-row"><div class="blabel">Option A — Full vendor-led (highest received quote) <span>External fees · knowledge leaves at handover</span></div><div class="bar vn"><i></i></div></div>
+        <div class="bar-row"><div class="blabel">Option B — Fully internal <span>Training &amp; certification only · direction unvalidated</span></div><div class="bar hy"><i style="width:45%"></i></div></div>
+        <div class="bar-row"><div class="blabel">Option C — Mixed <span>Vendor assessment &amp; roadmap + training &amp; certification · validated, knowledge stays</span></div><div class="bar mx"><i></i></div></div>
+      </div>
+
       <div class="cols c3" style="margin-top:6px">
         <div class="card" style="text-align:center;padding:12px"><div class="big o" style="font-size:26px">Capped</div><div class="klabel">Hard ceiling at market quote</div></div>
         <div class="card" style="text-align:center;padding:12px"><div class="big g" style="font-size:26px">High</div><div class="klabel">Knowledge retention after Year 1</div></div>
@@ -683,9 +733,16 @@ function renderTL(i){
    '<div class="card" style="border-top:4px solid var(--green)"><h4><span>Deliverable for Trolley</span>Immediate output</h4><p>'+t.out+'</p></div>';
 }
 renderTL(0);
-var cmp=document.getElementById('cmpTable'),bA=document.getElementById('btnA'),bB=document.getElementById('btnB');
-bA.onclick=function(){cmp.className='cmp viewA';bA.classList.add('on');bB.classList.remove('on');};
-bB.onclick=function(){cmp.className='cmp viewB';bB.classList.add('on');bA.classList.remove('on');};
+
+var cmp=document.getElementById('cmpTable');
+var abtns={A:document.getElementById('btnA'),B:document.getElementById('btnB'),C:document.getElementById('btnC')};
+Object.keys(abtns).forEach(function(k){
+  abtns[k].onclick=function(){
+    cmp.className='cmp view'+k;
+    Object.keys(abtns).forEach(function(j){abtns[j].classList.toggle('on',j===k);});
+  };
+});
+
 var h=parseInt(location.hash.replace('#',''),10);
 slides[0].classList.add('active');
 go(!isNaN(h)&&h>=1&&h<=slides.length?h-1:0);
