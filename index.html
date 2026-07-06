@@ -690,5 +690,74 @@ var h=parseInt(location.hash.replace('#',''),10);
 slides[0].classList.add('active');
 go(!isNaN(h)&&h>=1&&h<=slides.length?h-1:0);
 </script>
+
+<!-- FIT & CENTER EVERY SLIDE TO SCREEN -->
+<style>
+.slide{display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.fitwrap{transform-origin:center center;width:100%}
+@media print{.fitwrap{transform:none!important}}
+</style>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  slides.forEach(function(s){
+    var w=document.createElement('div');w.className='fitwrap';
+    while(s.firstChild){w.appendChild(s.firstChild);}
+    s.appendChild(w);
+  });
+  function fit(){
+    slides.forEach(function(s){
+      var w=s.querySelector('.fitwrap');if(!w)return;
+      w.style.transform='none';
+      var cs=getComputedStyle(s);
+      var availW=s.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+      var availH=s.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
+      var scale=Math.min(1,availW/w.scrollWidth,availH/w.scrollHeight);
+      w.style.transform='scale('+scale+')';
+    });
+  }
+  window.addEventListener('resize',fit);
+  window.addEventListener('load',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  document.addEventListener('click',function(){setTimeout(fit,60)});
+  setTimeout(fit,50);
+})();
+</script>
+
+
+    <!-- FIT & CENTER EVERY SLIDE TO SCREEN -->
+    <style>
+    .slide{display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+    .fitwrap{transform-origin:center center;width:100%}
+    @media print{.fitwrap{transform:none!important}}
+    </style>
+    <script>
+    (function(){
+      var slides=[].slice.call(document.querySelectorAll('.slide'));
+      slides.forEach(function(s){
+        var w=document.createElement('div');w.className='fitwrap';
+        while(s.firstChild){w.appendChild(s.firstChild);}
+        s.appendChild(w);
+      });
+      function fit(){
+        slides.forEach(function(s){
+          var w=s.querySelector('.fitwrap');if(!w)return;
+          w.style.transform='none';
+          var cs=getComputedStyle(s);
+          var availW=s.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+          var availH=s.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
+          var scale=Math.min(1,availW/w.scrollWidth,availH/w.scrollHeight);
+          w.style.transform='scale('+scale+')';
+        });
+      }
+      window.addEventListener('resize',fit);
+      window.addEventListener('load',fit);
+      if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+      document.addEventListener('click',function(){setTimeout(fit,60)});
+      setTimeout(fit,50);
+    })();
+    </script>
+
+
 </body>
 </html>
