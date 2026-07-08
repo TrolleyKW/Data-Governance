@@ -147,8 +147,12 @@ input[type=range]{width:100%;accent-color:var(--orange);height:34px}
 .cmp td:first-child{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);width:18%}
 .cmp .colA,.cmp .colB{width:41%;transition:opacity .3s}
 .cmp.viewB .colA{opacity:.38} .cmp.viewA .colB{opacity:.38}
-.cmp th.colB{background:var(--navy-2)}
-.cmp th.colC{background:var(--green)}
+
+#btnA.on{background:var(--teal)}
+#btnB.on{background:var(--green)}
+#btnC.on{background:#E0A400;color:var(--navy)}
+
+
 .cmp td:first-child{width:13%}
 .cmp .colA,.cmp .colB,.cmp .colC{width:29%;transition:opacity .3s}
 .cmp.viewA .colB,.cmp.viewA .colC{opacity:.38}
@@ -441,10 +445,10 @@ img.avatar{width:64px;height:64px;object-fit:cover;border:3px solid var(--orange
     <tr><th></th><th class="colA">Option A — Full vendor-led implementation</th><th class="colB">Option B — Fully internal implementation</th><th class="colC">Option C — Vendor assessment + internal implementation</th></tr>
     <tr><td>Model</td><td class="colA">Vendor performs assessment, design, implementation, documentation and handover</td><td class="colB">Data Science team does everything internally after training</td><td class="colC">Vendor delivers assessment, gap analysis &amp; roadmap — Data Science team implements after training &amp; certification</td></tr>
     <tr><td>Cost</td><td class="colA">High — Consumes the full budget in external fees</td><td class="colB">Lower total cost of ownership within the same envelope</td><td class="colC">vendor fees limited to assessment — && Training Cost & Certificates &amp; roadmap validation</td></tr>
-    <tr><td>Dependency</td><td class="colA">High, long-term vendor reliance</td><td class="colB">Low — advisory only where we need it</td><td class="colC">Low — expert input only at the start</td></tr>
+    <tr><td>Dependency</td><td class="colA">High, long-term vendor reliance</td><td class="colB">Low — advisory only where we need it</td><td class="colC">Medium — expert input only at the start & vendor reliance</td></tr>
     <tr><td>Knowledge</td><td class="colA">May leave with the vendor after handover</td><td class="colB">Stays and compounds within Trolley</td><td class="colC">Externally validated — and stays inside Trolley (Half/Half)</td></tr>
     <tr><td>Capability</td><td class="colA">Limited internal capability building</td><td class="colB">A certified in-house governance team of four</td><td class="colC">Mixed between Trolley Team & Vendor</td></tr>
-    <tr><td>Risk</td><td class="colA">Vendor lock-in, limited internal capability</td><td class="colB">Self-sufficient and future-ready</td><td class="colC">Reduced — validated direction, internal execution</td></tr>
+    <tr><td>Risk</td><td class="colA">Vendor lock-in, limited internal capability</td><td class="colB">Self-sufficient and future-ready</td><td class="colC">Reduced — validated direction, internal execution, Vendor Qyalification</td></tr>
   </table>
   <!-- <div class="reco">Recommended: Option B — build internal capability, use expert advisory selectively.</div> --> 
    <div class="reco">Before I share my own recommendation — from your side, which of the three models feels right for Trolley, and what's driving your choice?</div>
